@@ -17,7 +17,7 @@ SRC_URI = "file://wolfenginetest.c \
            file://wolfengineenv.sh \
           "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_compile() {
     ${CC} ${WORKDIR}/wolfenginetest.c -o wolfenginetest \

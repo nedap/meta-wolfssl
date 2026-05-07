@@ -24,7 +24,7 @@ SRC_URI = "file://wolfproviderenv.c \
 SRC_URI[provider_conf.sha256sum] = "3ad9e7cf5aefb9d36b9482232365094f42390f3ef03778fa84c3efb39d48e4c2"
 SRC_URI[provider_fips_conf.sha256sum] = "0b2174ab296aefa9a3f1fe40ccf0b988b25d09188ae5abad27fb60923754e98f"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 inherit pkgconfig
 

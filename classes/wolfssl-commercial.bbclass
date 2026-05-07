@@ -18,7 +18,7 @@
 #   COMMERCIAL_BUNDLE_NAME = "${WOLFSSL_SRC}"
 #   COMMERCIAL_BUNDLE_PASS = "${WOLFSSL_SRC_PASS}"
 #   COMMERCIAL_BUNDLE_SHA = "${WOLFSSL_SRC_SHA}"
-#   COMMERCIAL_BUNDLE_TARGET = "${WORKDIR}"
+#   COMMERCIAL_BUNDLE_TARGET = "${UNPACKDIR}"
 #
 # Helper functions:
 #   get_commercial_src_uri(d) - Generates conditional SRC_URI
@@ -85,8 +85,8 @@ def get_commercial_src_uri(d):
     return ""
 
 def get_commercial_source_dir(d):
-    """Get source directory for commercial bundle if configured, WORKDIR otherwise"""
-    workdir = d.getVar('WORKDIR')
+    """Get source directory for commercial bundle if configured, UNPACKDIR otherwise"""
+    workdir = d.getVar('UNPACKDIR')
     bundle_name = d.getVar('COMMERCIAL_BUNDLE_NAME')
 
     # Check for direct source directory - return the copy location in WORKDIR
@@ -119,7 +119,7 @@ COMMERCIAL_BUNDLE_NAME ?= ""
 COMMERCIAL_BUNDLE_FILE ?= ""
 COMMERCIAL_BUNDLE_PASS ?= ""
 COMMERCIAL_BUNDLE_SHA ?= ""
-COMMERCIAL_BUNDLE_TARGET ?= "${WORKDIR}"
+COMMERCIAL_BUNDLE_TARGET ?= "${UNPACKDIR}"
 COMMERCIAL_BUNDLE_PLACEHOLDER ?= "${WOLFSSL_LAYERDIR}/recipes-wolfssl/wolfssl/commercial/files/README.md"
 COMMERCIAL_BUNDLE_GCS_URI ?= ""
 COMMERCIAL_BUNDLE_SRC_DIR ?= ""
