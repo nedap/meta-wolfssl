@@ -35,7 +35,7 @@ python __anonymous() {
 
 S = "${WORKDIR}/git"
 
-export USE_LOCAL_WOLFSSL="${STAGING_EXECPREFIXDIR}"
+export USE_LOCAL_WOLFSSL = "${STAGING_EXECPREFIXDIR}"
 # Add reproducible build flags
 CFLAGS += " -g0 -O2 -ffile-prefix-map=${WORKDIR}=."
 CXXFLAGS += " -g0 -O2 -ffile-prefix-map=${WORKDIR}=."
